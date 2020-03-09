@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title> Site 12 page 1 </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/editor.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+
+    <link href="../../mazaar/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../mazaar/css/theme.css" rel="stylesheet" type="text/css">
+    <link href="../../mazaar/css/skins/skin-default.css" rel="stylesheet" type="text/css">
+    <link href="../../mazaar/css/plugins.css" rel="stylesheet" type="text/css">
+
+    <style>
+
+    </style>
+
+</head>
+    <body style="padding-top: 0px; padding-bottom: 0px;" class="">
+         <div class="container-fluid block fullwidth-block" style="padding-top: 0px; padding-bottom: 0px;" data-type="block">
+		 <h1> Site 12 page 1 </h1>
+		 
+		  <p>Site 12 details of page 1&nbsp;&nbsp;&nbsp;&nbsp;</p>
+         </div>
+         <script type="text/javascript">
+
+           var edgeSize = 50;
+           var timer = null;
+
+           window.addEventListener( "mousemove", handleMousemove, false );
+
+
+           // --------------------------------------------------------------------------- //
+           // --------------------------------------------------------------------------- //
+
+           // I adjust the window scrolling in response to the given mousemove event.
+           function handleMousemove( event ) {
+             console.log("handleMousemove");
+             var viewportX = event.clientX;
+             var viewportY = event.clientY;
+
+             // Get the viewport dimensions.
+             var viewportWidth = document.documentElement.clientWidth;
+             var viewportHeight = document.documentElement.clientHeight;
+
+             var edgeTop = edgeSize;
+             var edgeLeft = edgeSize;
+             var edgeBottom = ( viewportHeight - edgeSize );
+             var edgeRight = ( viewportWidth - edgeSize );
+
+             var isInLeftEdge = ( viewportX < edgeLeft );
+             var isInRightEdge = ( viewportX > edgeRight );
+             var isInTopEdge = ( viewportY < edgeTop );
+             var isInBottomEdge = ( viewportY > edgeBottom );
+
+             if ( ! ( isInLeftEdge || isInRightEdge || isInTopEdge || isInBottomEdge ) ) {
+
+               clearTimeout( timer );
+               return;
+
+             }
+             var documentWidth = Math.max(
+               document.body.scrollWidth,
+               document.body.offsetWidth,
+               document.body.clientWidth,
+               document.documentElement.scrollWidth,
+               document.documentElement.offsetWidth,
+               document.documentElement.clientWidth
+             );
+             var documentHeight = Math.max(
+               document.body.scrollHeight,
+               document.body.offsetHeight,
+               document.body.clientHeight,
+               document.documentElement.scrollHeight,
+               document.documentElement.offsetHeight,
+               document.documentElement.clientHeight
+             );
+             var maxScrollX = ( documentWidth - viewportWidth );
+             var maxScrollY = ( documentHeight - viewportHeight );
+             (function checkForWindowScroll() {
+
+               clearTimeout( timer );
+
+               if ( adjustWindowScroll() ) {
+
+                 timer = setTimeout( checkForWindowScroll, 30 );
+
+               }
+
+             })();
+
+             // Adjust the window scroll based on the user's mouse position. Returns True
+             // or False depending on whether or not the window scroll was changed.
+             function adjustWindowScroll() {
+
+               // Get the current scroll position of the document.
+               var currentScrollX = window.pageXOffset;
+               var currentScrollY = window.pageYOffset;
+
+               // Determine if the window can be scrolled in any particular direction.
+               var canScrollUp = ( currentScrollY > 0 );
+               var canScrollDown = ( currentScrollY < maxScrollY );
+               var canScrollLeft = ( currentScrollX > 0 );
+               var canScrollRight = ( currentScrollX < maxScrollX );
+
+               // Since we can potentially scroll in two directions at the same time,
+               // let's keep track of the next scroll, starting with the current scroll.
+               // Each of these values can then be adjusted independently in the logic
+               // below.
+               var nextScrollX = currentScrollX;
+               var nextScrollY = currentScrollY;
+
+               // As we examine the mouse position within the edge, we want to make the
+               // incremental scroll changes more "intense" the closer that the user
+               // gets the viewport edge. As such, we'll calculate the percentage that
+               // the user has made it "through the edge" when calculating the delta.
+               // Then, that use that percentage to back-off from the "max" step value.
+               var maxStep = 10;
+
+               // Should we scroll left?
+               if ( isInLeftEdge && canScrollLeft ) {
+
+                 var intensity = ( ( edgeLeft - viewportX ) / edgeSize );
+
+                 nextScrollX = ( nextScrollX - ( maxStep * intensity ) );
+
+               // Should we scroll right?
+               } else if ( isInRightEdge && canScrollRight ) {
+
+                 var intensity = ( ( viewportX - edgeRight ) / edgeSize );
+
+                 nextScrollX = ( nextScrollX + ( maxStep * intensity ) );
+
+               }
+
+               // Should we scroll up?
+               if ( isInTopEdge && canScrollUp ) {
+
+                 var intensity = ( ( edgeTop - viewportY ) / edgeSize );
+
+                 nextScrollY = ( nextScrollY - ( maxStep * intensity ) );
+
+               // Should we scroll down?
+               } else if ( isInBottomEdge && canScrollDown ) {
+
+                 var intensity = ( ( viewportY - edgeBottom ) / edgeSize );
+
+                 nextScrollY = ( nextScrollY + ( maxStep * intensity ) );
+
+               }
+
+               // Sanitize invalid maximums. An invalid scroll offset won't break the
+               // subsequent .scrollTo() call; however, it will make it harder to
+               // determine if the .scrollTo() method should have been called in the
+               // first place.
+               nextScrollX = Math.max( 0, Math.min( maxScrollX, nextScrollX ) );
+               nextScrollY = Math.max( 0, Math.min( maxScrollY, nextScrollY ) );
+
+               if (
+                 ( nextScrollX !== currentScrollX ) ||
+                 ( nextScrollY !== currentScrollY )
+                 ) {
+
+                 window.scrollTo( nextScrollX, nextScrollY );
+                 return( true );
+
+               } else {
+
+                 return( false );
+
+               }
+
+             }
+
+           }
+         </script>
+         <script src="../../mazaar/js/jquery.min.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/modernizr.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/jquery.easing.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/jquery-ui.min.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/jquery.parallax.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/bootstrap.bundle.min.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/jquery.cookie.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/owl.carousel.min.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/slick.min.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/jquery.countdown.min.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/isotope.pkgd.min.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/jquery.magnific-popup.min.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/instafeed.min.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/sticky-sidebar.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/plugins/jquery.gmap.min.js" type="text/javascript"></script>
+          <script src="../../mazaar/js/theme.js" type="text/javascript"></script>
+    </body>
+
+</html>

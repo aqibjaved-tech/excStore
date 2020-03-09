@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="30px" viewBox="0 0 37 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_01" transform="translate(-260.000000, -25.000000)" fill="#FFFFFF">
+            <path d="M293.636364,25 L263.363636,25 C261.496818,25 260,26.4833333 260,28.3333333 L260,48.3333333 C260,50.1666667 261.496818,51.6666667 263.363636,51.6666667 L271.772727,51.6666667 L271.772727,55 L285.227273,55 L285.227273,51.6666667 L293.636364,51.6666667 C295.486364,51.6666667 296.983182,50.1666667 296.983182,48.3333333 L297,28.3333333 C297,26.4833333 295.486364,25 293.636364,25 L293.636364,25 Z M293.636364,48.3333333 L263.363636,48.3333333 L263.363636,28.3333333 L293.636364,28.3333333 L293.636364,48.3333333 L293.636364,48.3333333 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

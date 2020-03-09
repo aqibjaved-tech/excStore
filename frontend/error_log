@@ -1,0 +1,4 @@
+[16-Oct-2019 18:42:24 UTC] PHP Warning:  file_put_contents(/home/mystaging/public_html/ec-page-builder/frontend/): failed to open stream: Is a directory in /home/mystaging/public_html/ec-page-builder/frontend/save.php on line 23
+[16-Oct-2019 18:42:24 UTC] PHP Warning:  file_put_contents(/home/mystaging/public_html/ec-page-builder/frontend/): failed to open stream: Is a directory in /home/mystaging/public_html/ec-page-builder/frontend/save.php on line 23
+[16-Oct-2019 18:53:45 UTC] PHP Warning:  file_put_contents(/home/mystaging/public_html/ec-page-builder/frontend/): failed to open stream: Is a directory in /home/mystaging/public_html/ec-page-builder/frontend/save.php on line 23
+[01-Jan-2020 03:45:47 America/New_York] PHP Parse error:  syntax error, unexpected '$url' (T_VARIABLE) in /home/ahmajucr/public_html/frontend/index.php on line 35
