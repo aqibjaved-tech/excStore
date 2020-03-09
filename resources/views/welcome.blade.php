@@ -68,7 +68,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Domain not found! Contact admin!
+                    Domain not found! Contact Admin!
                 </div>
             </div>
         </div>
