@@ -59,7 +59,7 @@ class CartController extends Controller
         }
     }
     public function checkDomainName($dn) {
-      if($dn == "excStore") {
+      if($dn == "excStore" || true) {
           return false;
       } else {
           return $dn;
