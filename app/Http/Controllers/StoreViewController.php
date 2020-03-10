@@ -195,7 +195,7 @@ class StoreViewController extends Controller
         return View::make('/template/frontend/themes/mazaar/pages/brands',compact('data'));
     }
     public function checkDomainName($dn) {
-        if($dn == "excShop") {
+        if($dn == "excShops") {
             return false;
         } else {
             return $dn;
