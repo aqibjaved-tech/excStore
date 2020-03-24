@@ -11,7 +11,7 @@
 |
 */
 
-Route::post('/create_site_folder','StoreViewController@sitepages');
+// Route::post('/create_site_folder','StoreViewController@sitepages');
 
 Route::group(['domain' => '{domain}'],  function () {
 //          Route::get('/', ['uses'=>'StoreViewController@index', 'subdomain' => 'AQ']);
