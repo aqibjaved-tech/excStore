@@ -11,9 +11,9 @@
 |
 */
 
-// Route::post('/create_site_folder','StoreViewController@sitepages');
+Route::post('/create_site_folder','StoreViewController@sitepages');
 
-// Route::group(['domain' => '{domain}'],  function () {
+Route::group(['domain' => '{domain}'],  function () {
 //          Route::get('/', ['uses'=>'StoreViewController@index', 'subdomain' => 'AQ']);
 //         Route::get('/brands', ['uses'=>'StoreViewController@brands','subdomain' => 'AQ']);
 
@@ -46,4 +46,4 @@
 //          Route::get('/admin/dashboard/faq/', 'CommonController@ourFaq');
 //          Route::get('/admin/dashboard/video/', 'CommonController@watchVideo');
 //          Route::get('/admin/dashboard/getting-started/', 'CommonController@gettingStarted');
-// });
+});
