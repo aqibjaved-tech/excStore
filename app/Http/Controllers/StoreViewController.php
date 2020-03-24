@@ -8,8 +8,6 @@ use App\Repositories\StoreRepositoryInterface;
 use App\Http\Controllers\CommonController;
 use Redirect;
 use View;
-use Config;
-use Cookie;
 use Illuminate\Http\Request;
 
 class StoreViewController extends Controller
