@@ -8,7 +8,7 @@ use App\Repositories\StoreRepositoryInterface;
 use App\Http\Controllers\CommonController;
 use Redirect;
 use View;
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 class StoreViewController extends Controller
 {
