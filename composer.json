@@ -39,7 +39,6 @@
             "App\\": "app/"
         },
         "classmap": [
-            "app/src",
             "database/seeds",
             "database/factories"
         ]
